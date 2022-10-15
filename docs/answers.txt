@@ -1,0 +1,115 @@
+I originally went through the Git lab tutorials in late May/ early June 
+2022 as part of taking CEN4021 during the summer semester. I did repeat 
+them on 10/15/2022 for this assignment. 
+
+My Github account was established around the same time I did the lab
+tutorials during the summer semester. 
+
+1. Paste the console output you saved at the end of step 3.C.
+sbank@DESKTOP-C96RB35 MINGW64 ~/assignment2 (master)
+$ git commit
+[master 1b529fc] Create docs folder and status.txt file
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+sbank@DESKTOP-C96RB35 MINGW64 ~/assignment2 (master)
+$ git push
+info: please complete authentication in your browser...
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 1.05 KiB | 538.00 KiB/s, done.
+Total 11 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.    
+To https://github.com/sbbanks13/assignment2.git
+   f4975e5..1b529fc  master -> master
+
+2. How many commits have been done to the repository (not only by you,
+but by anyone) so far? Write the git command you used to get this 
+information. 
+Using the 'git log' command, I was able to see 10 commits to this 
+repository, beginning with....
+commit 4f6c88c953f4601929df7980a19dcdaee4f13854
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Thu Sep 5 14:59:19 2019 -0400
+
+    Base Vehicle class created
+
+3. When was the README.md file modified last? Write the git command 
+you used to get this information. 
+As shown below, using 'git log -1 README.md' I was able to retrieve
+the information.
+sbank@DESKTOP-C96RB35 MINGW64 ~/assignment2 (master)
+$ git log -1 README.md
+commit c7edecc48a54c8fa9767879a2c2aa370094bfb18
+Author: Steven Brett Banks <sbb13@fsu.edu>
+Date:   Sat Oct 15 13:02:10 2022 -0400
+
+    Add name and FSUID to README.md
+
+4. Mention two reasons why branches are used in a Git repository?
+The first reason branches are used is that allows for an easy 
+"restoration" point in the development history. This, subsequently, 
+allows for the second benefit which is that features can be 
+developed in parallel from the same starting point rather than
+linearly. With branching if the first feature developed gets rejected,
+it can easily be discarded without impacting the more recent feature 
+developed. 
+
+5. What is the difference between git log and git status?
+Git log allows you to see the project history and filter or search
+for specific changes. Git status lets you inspect the working directory
+and the staging area, allowing you to see if your files are up to date. 
+
+6. What command would you use to see the commits where "Vehicle.h" 
+was one of the committed files?
+Assuming "Vehicle.h" is located in the current working directory, 
+the command 'git log --follow Vehicle.h' would retrieve all commits 
+for the file. If not in the current directory, the file path would 
+need to be provided either in relative form to the current working 
+directory or in absolute form. 
+
+7. What command would you use to see the commits whose commit message
+contains the word "file"?
+'git log --grep="file"' would retrieve all commits whose commit message
+contains the word "file".
+
+8. In the context of object-oriented programming:
+    a. What is inheritance?
+    Inheritance is the concept of allowing a subclass that is defined to 
+    automatically incorporate attributes and/or methods of one or more
+    previously defined parent classes from which it is derived. 
+    b. What is polymorphism?
+    Polymorphism is the ability of a variable, function, or object to take
+    on multiple forms. It is commonly seen where classes in the same 
+    hierarchical tree may have a function of the same name, but the function
+    behaves differently depending upon the actual class from which the calling
+    object is derived. 
+    c. What is encapsulation?
+    Encapsulation is the "bundling of data with the methods that operate on that
+    data." It is used as a means of restricting access or hiding attributes or
+    methods for an object within the class definition of that object. 
+
+9. What is the main difference between the "Dictator and Lieutenants"
+workflow and the "Integration manager" workflow? 
+There are two primary differences between these workflows. The first is that
+developers have two different repositories in the latter workflow and the 
+integration manager only pulls from the developers public repository. The 
+second difference is that there is more than one layer of integration in 
+the 'Dictator and Lieutenants" workflow whereby the Lieutenants integrate 
+the work of their teams developers before sending it to the Dictator who
+then integrates the work of the different teams prior to pushing it to the
+"blessed" repository. 
+
+10. How would a team of 100 developers benefit from following the 
+"Dictator and Lieutenants" workflow instead of the "Centralized" 
+workflow? 
+The "Centralized" workflow would be a practically impossible environment
+in which to work for that many developers. Each developer would have to be 
+constantly aware of the work of all other 99 developers. That's nearly 10,000
+push/pull channels that the team is managing. In the "Dictator and Lieutenants" 
+workflow, if there were 10 Lieutenants that each managed 10 developers, each
+individual in the two management levels would need only integrate development from
+10 pull channels. This would result in 110 pull channels, as there would be only one
+single push channel. This workflow would be roughly 1% as complicated to maintain 
+as the Centralized workflow in this scenario.  
